@@ -2,6 +2,16 @@
 # Variables Generales
 ###################################################
 
+variable "client" {
+  description = "Nombre del cliente/unidad de negocio (ej: dtl)"
+  type        = string
+
+  validation {
+    condition     = length(var.client) > 0 && can(regex("^[a-z0-9-]+$", var.client))
+    error_message = "El nombre del cliente no puede estar vacío y debe contener solo minúsculas, números y guiones."
+  }
+}
+
 variable "project" {
   description = "Nombre del proyecto"
   type        = string
