@@ -22,8 +22,8 @@ Ejemplo resultante: `dtl-vin-dev-cw-alarm-ec2-web-high-cpu`
 
 | Requisito | Versión |
 |-----------|---------|
-| Terraform | `>= 1.0` |
-| AWS Provider | `>= 5.0` |
+| Terraform | `>= 1.14.0` |
+| AWS Provider | `>= 4.31.0` |
 
 El módulo requiere un **provider alias** `aws.project`:
 
@@ -39,9 +39,9 @@ providers = {
 
 | Variable | Tipo | Descripción | Validación |
 |----------|------|-------------|------------|
-| `client` | `string` | Nombre del cliente/unidad de negocio | Solo minúsculas, números y guiones |
-| `project` | `string` | Nombre del proyecto | Solo minúsculas, números y guiones |
-| `environment` | `string` | Entorno de despliegue | `dev`, `qa`, `pdn` |
+| `client` | `string` | Nombre del cliente/unidad de negocio | Solo minúsculas, números y guiones. Máx 10 caracteres |
+| `project` | `string` | Nombre del proyecto | Solo minúsculas, números y guiones. Máx 15 caracteres |
+| `environment` | `string` | Entorno de despliegue | `dev`, `qa`, `staging`, `pdn`, `prod`, `poc` |
 
 ### Configuración de alarmas (obligatoria)
 

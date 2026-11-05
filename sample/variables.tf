@@ -13,7 +13,7 @@ variable "project" {
 }
 
 variable "environment" {
-  description = "Entorno (dev, qa, pdn)"
+  description = "Entorno (dev, qa, staging, pdn, prod, poc)"
   type        = string
 }
 
@@ -30,6 +30,12 @@ variable "region" {
 variable "profile" {
   description = "Profile AWS para autenticación local"
   type        = string
+}
+
+variable "common_tags" {
+  description = "Etiquetas comunes aplicadas a nivel de provider (default_tags)"
+  type        = map(string)
+  default     = {}
 }
 
 ###################################################

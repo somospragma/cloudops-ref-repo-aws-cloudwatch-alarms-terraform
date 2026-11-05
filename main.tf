@@ -10,24 +10,24 @@ resource "aws_cloudwatch_metric_alarm" "alarm" {
   alarm_description   = each.value.alarm_description
   comparison_operator = each.value.comparison_operator
   evaluation_periods  = each.value.evaluation_periods
-  
+
   # Parámetros opcionales para alarmas simples
-  threshold      = each.value.threshold
-  metric_name    = each.value.metric_name
-  namespace      = each.value.namespace
-  period         = each.value.period
-  statistic      = each.value.statistic
-  
+  threshold   = each.value.threshold
+  metric_name = each.value.metric_name
+  namespace   = each.value.namespace
+  period      = each.value.period
+  statistic   = each.value.statistic
+
   # Configuración adicional
   datapoints_to_alarm = each.value.datapoints_to_alarm
   treat_missing_data  = each.value.treat_missing_data
   actions_enabled     = each.value.actions_enabled
-  
+
   # Acciones
   alarm_actions             = each.value.alarm_actions
   ok_actions                = each.value.ok_actions
   insufficient_data_actions = each.value.insufficient_data_actions
-  
+
   # Dimensiones
   dimensions = each.value.dimensions
 
